@@ -1,0 +1,265 @@
+.terminal-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Dark Theme (Default) */
+.theme-dark {
+  background: #1d1d1f;
+  color: #00ff00;
+}
+
+.theme-dark .terminal-header {
+  background: #2d2d2f;
+  border-bottom: 1px solid #3d3d3f;
+}
+
+.theme-dark .terminal-body {
+  background: #1d1d1f;
+}
+
+.theme-dark .terminal-prompt {
+  color: #00ff00;
+}
+
+.theme-dark .terminal-command-text {
+  color: #ffffff;
+}
+
+.theme-dark .terminal-output {
+  color: #d1d1d6;
+}
+
+.theme-dark .terminal-input {
+  color: #ffffff;
+}
+
+/* Light Theme */
+.theme-light {
+  background: #ffffff;
+  color: #1d1d1f;
+}
+
+.theme-light .terminal-header {
+  background: #f5f5f7;
+  border-bottom: 1px solid #e5e5e7;
+}
+
+.theme-light .terminal-body {
+  background: #ffffff;
+}
+
+.theme-light .terminal-prompt {
+  color: #0071e3;
+}
+
+.theme-light .terminal-command-text {
+  color: #1d1d1f;
+}
+
+.theme-light .terminal-output {
+  color: #424245;
+}
+
+.theme-light .terminal-input {
+  color: #1d1d1f;
+}
+
+/* Matrix Theme */
+.theme-matrix {
+  background: #000000;
+  color: #00ff41;
+}
+
+.theme-matrix .terminal-header {
+  background: #0a0a0a;
+  border-bottom: 1px solid #00ff41;
+}
+
+.theme-matrix .terminal-body {
+  background: #000000;
+}
+
+.theme-matrix .terminal-prompt {
+  color: #00ff41;
+  text-shadow: 0 0 5px #00ff41;
+}
+
+.theme-matrix .terminal-command-text {
+  color: #00ff41;
+  text-shadow: 0 0 5px #00ff41;
+}
+
+.theme-matrix .terminal-output {
+  color: #00dd33;
+  text-shadow: 0 0 3px #00dd33;
+}
+
+.theme-matrix .terminal-input {
+  color: #00ff41;
+  text-shadow: 0 0 5px #00ff41;
+}
+
+/* Terminal Header */
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  flex-shrink: 0;
+}
+
+.terminal-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot-red {
+  background: #ff5f56;
+}
+
+.dot-yellow {
+  background: #ffbd2e;
+}
+
+.dot-green {
+  background: #27c93f;
+}
+
+.terminal-name {
+  font-size: 13px;
+  font-weight: 500;
+  margin-left: 8px;
+  opacity: 0.7;
+}
+
+.terminal-close {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 4px;
+  opacity: 0.7;
+  transition: opacity 300ms ease;
+}
+
+.terminal-close:hover {
+  opacity: 1;
+}
+
+/* Terminal Body */
+.terminal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  cursor: text;
+}
+
+.terminal-content {
+  min-height: 100%;
+}
+
+.terminal-entry {
+  margin-bottom: 8px;
+}
+
+.terminal-command {
+  display: flex;
+  gap: 12px;
+}
+
+.terminal-prompt {
+  font-weight: 600;
+  user-select: none;
+}
+
+.terminal-command-text {
+  flex: 1;
+}
+
+.terminal-output {
+  margin: 0 0 12px 0;
+  padding-left: calc(17ch + 12px);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.terminal-input-wrapper {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  caret-color: currentColor;
+}
+
+/* Scrollbar */
+.terminal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.theme-dark .terminal-body::-webkit-scrollbar-track {
+  background: #2d2d2f;
+}
+
+.theme-dark .terminal-body::-webkit-scrollbar-thumb {
+  background: #4d4d4f;
+  border-radius: 4px;
+}
+
+.theme-light .terminal-body::-webkit-scrollbar-track {
+  background: #f5f5f7;
+}
+
+.theme-light .terminal-body::-webkit-scrollbar-thumb {
+  background: #d2d2d7;
+  border-radius: 4px;
+}
+
+.theme-matrix .terminal-body::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+.theme-matrix .terminal-body::-webkit-scrollbar-thumb {
+  background: #00ff41;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .terminal-page {
+    font-size: 12px;
+  }
+
+  .terminal-body {
+    padding: 12px;
+  }
+
+  .terminal-output {
+    padding-left: calc(19ch + 12px);
+  }
+}
