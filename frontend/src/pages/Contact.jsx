@@ -26,14 +26,16 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Submit to FormKeep
-      const response = await fetch('https://formkeep.com/p/e3b4f69511ee487ce055301f38eeb70d', {
+      // Submit to FormKeep as multipart/form-data using the form element
+      const form = e.currentTarget;
+      const data = new FormData(form);
+
+      const response = await fetch('https://formkeep.com/f/7651f02be67e', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
+          Accept: 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: data
       });
 
       if (response.ok) {
@@ -95,7 +97,14 @@ const Contact = () => {
           </div>
 
           <div className="contact-form-wrapper">
-            <form onSubmit={handleSubmit} className="contact-form">
+            <form
+              onSubmit={handleSubmit}
+              action="https://formkeep.com/f/7651f02be67e"
+              method="POST"
+              encType="multipart/form-data"
+              acceptCharset="UTF-8"
+              className="contact-form"
+            >
               <div className="form-group">
                 <label htmlFor="name">Name</label>
                 <input
